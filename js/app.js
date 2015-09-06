@@ -9,7 +9,7 @@ $(window).load(function() {
 
 
 	$(".button").click(function() {
-		angular.element($(".container").scope().advance());
+		angular.element($(".container").scope().advance(""));
 		if ($("#numHours").val() != "") {
 			angular.element($(".container").scope().setNumHours($("#numHours").val()));
 		}
