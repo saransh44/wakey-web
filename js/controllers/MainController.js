@@ -54,7 +54,7 @@ app.controller('MainController', function($scope, $firebaseArray) {
 				setTimeout(function() {$scope.myAudio.pause(); $scope.myAudio.currentTime = 0}, 10000);
 			}
 
-			if ($scope.currentViewIndex == 4) {
+			if ($scope.currentViewIndex == 5) {
 
 				$scope.myAudio.currentTime = 0;
 				$scope.myAudio.pause();
