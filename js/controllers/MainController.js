@@ -1,5 +1,8 @@
 app.controller('MainController', function($scope, $firebaseArray) {
 
+	var ref = new Firebase("https://burning-inferno-2014.firebaseio.com/");
+	$scope.allData = $firebaseArray(ref);
+
 	$scope.viewSequence = ["#intro", "#pairing", "#hours", "#timeline", "#alarm", "#finished"];
 	$scope.currentView = "#intro";
 	$scope.currentViewIndex = 0;
@@ -19,13 +22,15 @@ app.controller('MainController', function($scope, $firebaseArray) {
 		$scope.currentViewIndex++;
 		$scope.currentView = $scope.viewSequence[$scope.currentViewIndex];
 		if ($scope.currentViewIndex == 4) {
+			$scope.$apply(function() {$scope.sleepCount++;});
 			$scope.myAudio.addEventListener('ended', function() {
-			    this.currentTime = 0;
+			    this.currentTime = 0;x
 			    this.play();
 			}, false);
 			$scope.myAudio.play();
 			setTimeout(function() {$scope.myAudio.pause(); $scope.myAudio.currentTime = 0}, 10000);
 		}
+		else if ($scope.currentViewIndex == 5)
 		console.log($scope.currentView);
 		setTimeout(function() {
 			$($scope.currentView).fadeIn($scope.tt);
