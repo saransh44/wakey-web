@@ -12,11 +12,20 @@ app.controller('MainController', function($scope, $firebaseArray) {
 	$scope.tips = ["A word of encouragement during a failure is worth more than an hour of praise after success. -Unknown", "In the middle of every difficulty lies opportunity. -Albert Einstein", "The best revenge is massive success. -Frank Sinatra", "Most of us, swimming against the tides of trouble the world knows nothing about, need only a bit of praise or encouragement – and we will make the goal. -Jerome Fleishman", "Perhaps everything terrible is in its deepest being something helpless that wants help from us. -Rainer Rilke", "Trust yourself. You know more than you think you do. -Ben Spock", "Go confidently in the direction of your dreams. Live the life you have imagined. -Henry Thoreau", "He who refuses to embrace a unique opportunity loses the prize as surely as if he had failed.", "Never let the odds keep you from doing what you know in your heart you were meant to do. -H. Jackson Brown, Jr.", "When you come to the end of your rope, tie a knot and hang on. -Franklin Roosevelt"];
 
 	$scope.advance = function() {
+		myAudio.stop();
 		$scope.currentTipIndex = 0;
 		$("#alarm .logo").css("width", "200px");
 		$($scope.currentView).fadeOut($scope.tt);
 		$scope.currentViewIndex++;
 		$scope.currentView = $scope.viewSequence[$scope.currentViewIndex];
+		if ($scope.currentViewIndex == 4) {
+			myAudio = new Audio('sounds/alarm.mp3'); 
+			myAudio.addEventListener('ended', function() {
+			    this.currentTime = 0;
+			    this.play();
+			}, false);
+			myAudio.play();
+		}
 		console.log($scope.currentView);
 		setTimeout(function() {
 			$($scope.currentView).fadeIn($scope.tt);

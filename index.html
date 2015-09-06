@@ -91,9 +91,10 @@
 			<script>
 				var zoom = function() {
 					$("#alarm .logo").animate({'width': '+=50px'}, 400);
-					$("#alarm .bruh").animate({'font-size': '+=15px'}, 400);
+					$("#alarm .container").css("background", "black");
+					setTimeout(function() {$("#alarm .container").css("background", "linear-gradient(0deg, #C61B10, #c80000)");}, 200);
 				}
-				var z = setInterval(zoom, 5000)
+				var z = setInterval(zoom, 1500)
 			</script>
 
 			<div class="container">

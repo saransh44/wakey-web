@@ -214,7 +214,7 @@ h3 {
 }
 
 #alarm .container {
-	background: linear-gradient(0deg, #d40041, #c80000);
+	background: linear-gradient(0deg, #C61B10, #c80000);
 	height: 100%;
 }
 
@@ -223,7 +223,7 @@ h3 {
 }
 
 #alarm .button {
-	bottom: 20px;
+	margin-top: 500px;
 }
 
 #finished {
