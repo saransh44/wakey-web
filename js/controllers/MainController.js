@@ -19,11 +19,11 @@ app.controller('MainController', function($scope, $firebaseArray) {
 		$scope.currentViewIndex++;
 		$scope.currentView = $scope.viewSequence[$scope.currentViewIndex];
 		if ($scope.currentViewIndex == 4) {
-			myAudio.addEventListener('ended', function() {
+			$scope.myAudio.addEventListener('ended', function() {
 			    this.currentTime = 0;
 			    this.play();
 			}, false);
-			myAudio.play();
+			$scope.myAudio.play();
 			setTimeout(function() {$scope.myAudio.pause(); $scope.myAudio.currentTime = 0}, 10000);
 		}
 		console.log($scope.currentView);
