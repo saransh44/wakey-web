@@ -1,0 +1,14 @@
+#timeline .line {
+  background: white;
+  width: 4px;
+  position: absolute;
+  margin: auto;
+  left: 50%;
+  height: 100%;
+}
+
+#timeline .circle {
+  background: white;
+  width: 50px;
+  border-radius: 50%;
+}

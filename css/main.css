@@ -1,0 +1,246 @@
+@font-face {
+	font-family: 'Helvetica Neue Light';
+	src: url('../fonts/HelveticaNeue-Light.ttf') format("truetype");
+}
+
+@font-face {
+	font-family: 'Helvetica Neue Ultralight';
+	src: url('../fonts/HelveticaNeue-UltraLight.ttf') format("truetype");
+}
+
+
+html, body {
+	height: 100%;
+	margin: 0;
+	font-family: 'Helvetica Neue Ultralight';
+	color: white;
+	font-size: 125%;
+}
+
+*, *:hover {
+	-webkit-transition: all 0.1s ease-out;
+	-moz-transition: all 0.1s ease-out;
+	transition: all 0.1s ease-out;
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(0deg, black, #000d3f, #3a6669, #ffd215) no-repeat;
+}
+
+#intro, #pairing, #hours, #timeline .time, #alarm .container *, #finished .container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	 -o-transform: translate(-50%, -50%);
+}
+
+h1, h2, h3 {
+	margin: auto;
+	text-align: center;
+}
+
+h1 {
+	font-size: 300%;
+}
+
+h2 {
+	font-size: 250%;
+}
+
+h3 {
+	font-size: 150%;
+}
+
+.button {
+	max-width: 300px;
+	padding: 20px;
+	border-radius: 10px;
+	border: 1px solid white;
+	margin: auto;
+	margin-top: 50px;
+	text-align: center;
+}
+
+.button:hover {
+	color: #396568;
+	background-color: white;
+	cursor: pointer;
+}
+
+.logo {
+	width: 200px;
+	margin: 50px auto;
+}
+
+.logo img {
+	width: 100%;
+}
+
+.view {
+	display: none;
+	opacity: 0;
+}
+
+#intro {
+	display: block;
+	opacity: 1;
+}
+
+/* made by Alexander Dom at http://codepen.io/AlexanderDom/pen/medrGa */
+@-webkit-keyframes animIn {
+    0% {
+        -webkit-transform: translateX(-100px);
+        transform: translateX(-100px);
+        opacity: 0
+    }
+
+    50% {
+        opacity: 1
+    }
+
+    100% {
+        -webkit-transform: translateX(100px);
+        transform: translateX(100px);
+        opacity: 0
+    }
+}
+
+@keyframes animIn {
+    0% {
+        -webkit-transform: translateX(-100px);
+        transform: translateX(-100px);
+        opacity: 0
+    }
+
+    50% {
+        opacity: 1
+    }
+
+    100% {
+        -webkit-transform: translateX(100px);
+        transform: translateX(100px);
+        opacity: 0
+    }
+}
+
+.loading {
+	margin: 100px auto;
+	position: absolute;
+	top: calc(50% + 25px);
+	left: 50%;
+}
+
+.loading .bullet {
+	position: absolute;
+    padding: 5px;
+    border-radius: 50%;
+    background: #fff;
+    -webkit-animation: animIn .65s ease-in-out 0s infinite;
+    animation: animIn .65s ease-in-out 0s infinite
+}
+
+.loading .bullet:nth-child(1) {
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s
+}
+
+.loading .bullet:nth-child(2) {
+    -webkit-animation-delay: .15s;
+    animation-delay: .15s
+}
+
+.loading .bullet:nth-child(3) {
+    -webkit-animation-delay: .3s;
+    animation-delay: .3s
+}
+
+.loading .bullet:nth-child(4) {
+    -webkit-animation-delay: .45s;
+    animation-delay: .45s
+}
+
+#hours .selectHour {
+	margin: 100px auto;
+	text-align: center;
+}
+
+#hours .button {
+	display: none;
+}
+
+#hours input {
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	max-width: 120px;
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid white;
+	text-align: center;
+}
+
+#hours input:focus {
+	outline: none;
+}
+
+#hours h3 {
+	display: inline-block;
+}
+
+#timeline {
+	height: 100%;
+}
+
+#timeline .container {
+	height: 100%;
+	margin: 0;
+}
+
+#timeline .currentTip {
+	font-family: "Helvetica Neue Ultralight";
+	font-size: 80%;
+	margin-top: 25px;
+}
+
+#alarm {
+	height: 100%;
+}
+
+#alarm .container {
+	background: linear-gradient(0deg, #d40041, #c80000);
+	height: 100%;
+}
+
+#alarm .logo {
+	max-width: 80%;
+}
+
+#alarm .button {
+	margin-top: 50px;
+}
+
+#finished {
+	background: linear-gradient(45deg, #0049d4, #10006a, #04002a);
+	height: 100%;
+}
+
+#finished .motion-graph {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 100%;
+}
+
+#finished .container {
+	background: transparent;
+	width: auto; height: auto;
+}
+

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Wakey</title>
+
+	<script src="/js/jquery-2.1.0.min.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+	<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+	<script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/main.css"/>
+	<link rel="stylesheet" type="text/css" href="css/timeline.css"/>
+
+	<script src="/js/app.js"></script>
+	<script src="/js/graph.js"></script>
+	<script src="/js/controllers/MainController.js"></script>
+
+
+</head>
+<body ng-app="app">
+
+	<div class="container" ng-controller="MainController">
+
+		<div id="intro" class="view">
+
+			<h3>Welcome to</h3><h1>Wakey</h1>
+
+			<div class="logo"><img src="/img/logo.png"></div>
+
+			<div class="button" id="">
+				Let's begin
+			</div>
+			
+		</div>
+
+		<div id="pairing" class="view">
+
+			<h3>Pairing with Myo</h3>
+			<div class="loading">
+			<!-- Made by Alexander Dom at http://codepen.io/AlexanderDom/pen/medrGa -->
+			  <div class="bullet"></div>
+			  <div class="bullet"></div>
+			  <div class="bullet"></div>
+			  <div class="bullet"></div>
+			</div>
+			<div class="button">Simulate Pairing</div>
+			
+		</div>
+
+		<div id="hours" class="view">
+
+			<h3>I need to stay awake for
+				<span class="selectHour">
+					<span style="font-family: 'Helvetica Neue Light'"><input type="text" id="numHours"></input></span>
+					hour(s).
+				</span>
+			</h3>
+
+			<p style="text-align:right; font-size:80%"><i>press enter to submit</i></p>
+
+			<div class="button">I'm ready</div>
+			
+			
+		</div>
+
+		<div id="timeline" class="view">
+
+			<script>
+				var tick = function() {
+					angular.element($(".container").scope().getCurrentTime());
+					angular.element($(".container").scope().getCurrentTip());
+				}
+				var t = setTimeout(tick, 30000);
+			</script>
+
+			<div class="container">
+
+				<div class="time">
+					<h1>{{ currentTime }}</h1>
+					<h3 class="currentTip">{{ currentTip }}</h3>
+					<div class="button">Simulate Sleep</div>
+				</div>
+
+			</div>
+	
+		</div>
+
+		<div id="alarm" class="view">
+
+			<script>
+				var zoom = function() {
+					$("#alarm .logo").animate({'width': '+=50px'}, 400);
+					$("#alarm .bruh").animate({'font-size': '+=15px'}, 400);
+				}
+				var z = setInterval(zoom, 5000)
+			</script>
+
+			<div class="container">
+				<img class="logo" src="/img/angry-logo.png">
+				<div class="button">Quick! Simulate Motion</div>
+			</div>
+
+			
+		</div>
+
+		<div id="finished" class="view">
+
+			<script type="text/javascript">
+				draw();
+			</script>
+
+			<div class="container">
+				
+				<h1>You made it!</h1>
+				<p>You almost fell asleep <span style="font-family:'Helvetica Neue Light'">{{ sleepCount }} times.</span></p>
+				
+			</div>
+
+			<canvas id="canvas" class="motion-graph">
+				
+			</canvas>
+
+		</div>
+		
+
+	</div>
+
+
+</body>
+</html>
